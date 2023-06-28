@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Meu html sem massagem</title>
+    <meta charset= "UTF-8">
+  </head>
+
+  <style>
+    *{
+      padding: 0%;
+      margin:0%;
+    }
+    .div{
+      width: 100%;  height: max-content;
+      padding: 5px;    
+    
+    }
+</style>
+
+<body style="margin: 0px; background-color:orange;">
+
+  <!-- Primeira div -->
+
+  <div class="div" id="div1" style=" background-color:rgb(139, 43, 43); ">
+    <h3>Isso vai ser um massacre</h3>
+    <p>Parece bom o suficiente pra voce?<br>
+       Em meu parceiro
+    </p>
+    <p>O que eu poderia colocar aqui?<br>
+       Bem não importa, vou colocar links
+       de poops<br><br>
+
+       1) <a href="https://www.youtube.com/watch?v=hBj01lGCp8Q&t=0s" style="text-decoration:none" target="_blank"><font color="green">Poopshop</font></a><br>
+       2) <a href="https://www.youtube.com/watch?v=THIjfHuYBDw" style="text-decoration:none" target="_blank"><font color="green"> Banheira desarranjada</font></a><br>
+       3) <a href="https://www.youtube.com/watch?v=TZwy4Z1LRy4" style="text-decoration:none" target="_blank"><font color="green">Mus<strong>tang</strong> preto</font></a>
+    </p>
+    <button style="background-color:aqua; margin-bottom: 4px; color: #520808;" onclick="abrilink()">RandomPoop</button>
+    <input type="text" style="background-color:brown; width:50px; color:white" id="input1"><br>
+    <button style="background-image: linear-gradient(to right, black, gray); color: gray;" onclick="reset()">Reset</button>
+    <h2>Now, rate the Poops!</h2>
+    <p>Identfy your favorite poop whith his<br>
+       number in the previous list and<br>
+       whrite below</p>
+    <input id="input2" style="width: 230px; margin-bottom: 4px; background-color: brown; color: white;" ><br>
+    <button onclick="wipe()" style="background-image: linear-gradient(to top, white, brown);">wipe</button>
+    <button onclick="submit()" style="background-image: linear-gradient(to right, silver, gold);">Submit</button>
+
+   <script>
+      function abrilink(){
+        var links = ['https://www.youtube.com/watch?v=hBj01lGCp8Q&t=0s', 
+                     'https://www.youtube.com/watch?v=THIjfHuYBDw', 
+                     'https://www.youtube.com/watch?v=TZwy4Z1LRy4'];   
+        var escolha = Math.floor(Math.random() * 3);
+        window.open(links[escolha], '_blank');
+        document.getElementById("input1").value = document.getElementById("input1").value + (escolha + 1);
+      }
+      function reset(){
+        document.getElementById("input1").value = "";
+      }
+ 
+      function submit(){
+        var input2 = document.getElementById("input2").value;
+        if(input2 == 1){ 
+          document.getElementById("input2").value = "Poopshop is the best!";
+        } else {if (input2 == 2){
+            document.getElementById("input2").value = "Banheira desarranjada is the best!";
+          } else {if (input2 == 3){
+              document.getElementById("input2").value = "Mustang preto is the best!";
+            } else { if (input2 !== ""){
+                document.getElementById("input2").value = "stop it, get some help..";
+              }}}}}
+   
+     function wipe(){
+       document.getElementById("input2").value = "";
+      }
+
+    </script>
+
+  </div>
+
+  <!--Segunda div-->
+
+  <div class="div" id="div2" style="background-color:rgb(55, 55, 248);">
+    <h3>Vamos ver esse, preciso
+        exercitar a criatividade...</h3>
+    <p>Hmmm, acho que vou de jogo da velha.
+       Como fazer isso?</p>
+    <p style=" width:max-content"><strong>Player: </strong><span style="font-style:inherit; color:red;">-1-</span><span style="font-style:inherit; color:blue;">-2-</span></p>
+
+    <p id="chance" style="display: inline-block;width:max-content;"></p> <span>&nbsp;</span>
+    <p style="display: inline-block;">Placar <div id="placar1" style="display: inline-block;background-color: red; width: max-content; height: max-content; margin: 3px;">0
+    </div><div id="placar2" style="display: inline-block; width: max-content; height: max-content;background-color: blue">0</div></p>
+
+
+
+    <style>
+      .subDiv2{
+        display: inline-block;
+        padding-top: 3px;
+        padding-left: 3px;
+        margin: -3px;
+        opacity: 100%;
+        width:240px;
+        height:80px;
+      }
+      .casa{
+        display: inline-block;
+        background-color: gray;
+        width: 31%;
+        height: 96%;
+        margin-left: 1px;
+        margin-top: 1px;
+      }
+    </style>
+
+
+    <div style="width:240px; height:240px;">
+      <div class="subDiv2">
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+      </div>
+      <div class="subDiv2">
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+      </div>
+      <div class="subDiv2">
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+      </div>
+    </div>
+    <button onclick="resetVelha()" style="background-color: greenyellow; margin-top: 10px;">Hirigoaguein</button>
+
+
+    <script>
+      var V = 1;
+      var player = document.getElementById("chance");
+      player.textContent = "Vez do jogador "+V;
+      var casas = document.querySelectorAll('.casa');
+      casas.forEach(function(casa){
+      casa.style.backgroundColor = "gray";
+      casa.setAttribute('onclick', 'chance(this)');
+      });
+
+      function chance(casa){
+        if(casa.style.backgroundColor === "gray"){
+          if(V === 1){
+            casa.style.backgroundColor = "red";
+            V = 2
+            player.textContent = "Vez do jogador "+V;
+            anyoneWin();
+            return true;
+          } else {
+              casa.style.backgroundColor = "blue";
+              V = 1;
+              player.textContent = "Vez do jogador "+V;
+              anyoneWin();
+              return true;
+            }
+        }
+      }
+
+      function anyoneWin(){
+        var p1 = document.getElementById("placar1");
+        var p2 = p1.textContent;
+        var sp1 = document.getElementById("placar2");
+        var sp2 = sp1.textContent;
+    
+        var theCombinatinos =
+          [[0, 1, 2], [3, 4, 5], [6, 7, 8],//linhas 
+           [0, 3, 6], [1, 4, 7], [2, 5, 8],//colunas
+           [0, 4, 8], [2, 4, 6]//diagonais
+          ];
+        for (var i = 0; i < theCombinatinos.length; i++) {
+          var combination = theCombinatinos[i];
+          var [a, b, c] = combination;
+        if(casas[a, b, c].style.backgroundColor !== "gray" &&
+          casas[a].style.backgroundColor === casas[b].style.backgroundColor &&
+          casas[b].style.backgroundColor === casas[c].style.backgroundColor){
+        if(V === 2){
+          player.textContent = "O jogador 1 venceu!";
+          casas.forEach(function(rem){
+            rem.removeAttribute('onclick');
+          });
+          p1.textContent = parseInt(p2) + 1;
+        } else{
+            player.textContent = "O jogador 2 venceu!";
+            casas.forEach(function(rem){
+              rem.removeAttribute('onclick');
+            });
+            sp1.textContent = parseInt(sp2) + 1;
+          }}}}
+
+
+      function resetVelha(){
+        casas.forEach(function(casa){
+          casa.style.backgroundColor = "gray";
+          V = 1;
+          player.textContent = "Vez do jogador "+V;
+          casa.setAttribute('onclick', 'chance(this)');
+        });
+      }
+
+
+
+
+
+</script>
+
+</div>
+
+
+  <!-- Terceira div-->
+
+
+  <style>
+
+    .alvo{
+      height: 25px; width: 25px;
+      display: inline-block;
+      background-color: aliceblue;
+      margin: 0.5px;
+      margin-bottom: -3.75px;
+    }
+
+
+  </style>
+
+  <div class="div" id="div3" style="background-color: yellow">
+    <div class="subDiv3" style="display: inline-block; width:max-content; height:max-content;">
+    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    </div>
+
+  </div>
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>

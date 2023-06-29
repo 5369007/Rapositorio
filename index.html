@@ -224,8 +224,8 @@
       background-color: aquamarine;
       margin: 0.5px;
       margin-bottom: -3.75px;
-      background-image: url(img/sub.jfif);
-     background-size: 100% 100%;
+      /* background-image: url(img/sub.jfif); */
+     /* background-size: 100% 100%; */
     }
 
 
@@ -233,6 +233,7 @@
 
   <div class="div" id="div3" style="background-color: yellow">
     <div class="subDiv3" style="display: inline-block; width:max-content; height:max-content;">
+    <div class="alvo" onclick="selec(this)"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
     <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
     <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
     <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
@@ -240,12 +241,21 @@
     <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
     <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
     <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-    </div>
+  </div>
 
   <script>
+    
+    var alvo = document.querySelectorAll('.alvo');
+    alvo.forEach(function (clic){
+    clic.setAttribute('onclick', 'selec(this)');
+    });
    
 
+    function selec(umAlvo){
+      if(umAlvo.style.backgroundColor === "aquamarine"){
+        umAlvo.style.backgroundImage = "url('img/sub.jfif')";
+      }else{}
+    }
 
   </script>
 

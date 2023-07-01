@@ -140,9 +140,9 @@
       var player = document.getElementById("chance");
       player.textContent = "Vez do jogador "+V;
       var casas = document.querySelectorAll('.casa');
-      casas.forEach(function(casa){
-      casa.style.backgroundColor = "gray";
-      casa.setAttribute('onclick', 'chance(this)');
+      casas.forEach(function(casas){
+      casas.style.backgroundColor = "gray";
+      casas.setAttribute('onclick', 'chance(this)');
       });
 
       function chance(casa){
@@ -212,47 +212,44 @@
 
 </div>
 
+      <!-- Terceira div -->
 
-  <!-- Terceira div-->
-
+<div  class="div" id="div3" style="background-color: yellow">
 
   <style>
 
     .alvo{
       height: 25px; width: 25px;
       display: inline-block;
-      background-color: aquamarine;
       margin: 0.5px;
       margin-bottom: -3.75px;
-      /* background-image: url(img/sub.jfif); */
-     /* background-size: 100% 100%; */
     }
 
 
   </style>
 
-  <div class="div" id="div3" style="background-color: yellow">
-    <div class="subDiv3" style="display: inline-block; width:max-content; height:max-content;">
-    <div class="alvo" onclick="selec(this)"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-    <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-  </div>
-
+    <div class="subDiv3" style="width:max-content; height:max-content;">
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    </div>
+  
   <script>
-    
     var alvo = document.querySelectorAll('.alvo');
-    alvo.forEach(function (clic){
-    clic.setAttribute('onclick', 'selec(this)');
+    alvo.forEach(function(alvo){
+      alvo.style.backgroundColor = "aquamarine";
+      alvo.setAttribute('onclick', 'selec(this)');
     });
    
 
     function selec(umAlvo){
       if(umAlvo.style.backgroundColor === "aquamarine"){
+        umAlvo.style.opacity = "100%";
         umAlvo.style.backgroundImage = "url('img/sub.jfif')";
       }else{}
     }

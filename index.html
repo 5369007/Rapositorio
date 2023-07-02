@@ -20,7 +20,7 @@
 
 <body style="margin: 0px; background-color:orange;">
 
-  <!-- Primeira div -->
+                                                                                   <!-- Primeira div -->
 
   <div class="div" id="div1" style=" background-color:rgb(139, 43, 43); ">
     <h3>Isso vai ser um massacre</h3>
@@ -79,7 +79,7 @@
 
   </div>
 
-  <!--Segunda div-->
+                                                                                   <!--Segunda div-->
 
   <div class="div" id="div2" style="background-color:rgb(55, 55, 248);">
     <h3>Vamos ver esse, preciso
@@ -212,33 +212,45 @@
 
 </div>
 
-      <!-- Terceira div -->
+                                                                                   <!--Terceira div-->
 
-<div  class="div" id="div3" style="background-color: yellow">
+<div  class="div" id="div3" style="background-color: yellow; height: 720px;">
 
   <style>
 
     .alvo{
-      height: 25px; width: 25px;
+      height: 50px; width: 50px;
       display: inline-block;
       margin: 0.5px;
       margin-bottom: -3.75px;
+      border: 1px solid;
     }
 
 
   </style>
-
-    <div class="subDiv3" style="width:max-content; height:max-content;">
-      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
-      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+  <div style="padding: 25px; background-color: azure; width: 90%; height:max-content;">
+    <div style="display: inline-block; width:max-content; height:max-content;">
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
     </div>
-  
+    <div style=" width:max-content; height:max-content; float: right">
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+      <div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><div class="alvo"></div><br>
+    </div>
+  </div>
+  <button onclick="recomecar()">Recomeçar</button>
   <script>
     var alvo = document.querySelectorAll('.alvo');
     alvo.forEach(function(alvo){
@@ -251,9 +263,15 @@
       if(umAlvo.style.backgroundColor === "aquamarine"){
         umAlvo.style.opacity = "100%";
         umAlvo.style.backgroundImage = "url('img/sub.jfif')";
+        umAlvo.style.backgroundSize = "100% 100%";
       }else{}
     }
 
+    function recomecar(){
+      alvo.forEach(function(alvo){
+      alvo.style.backgroundImage = "";
+    });
+  }
   </script>
 
 

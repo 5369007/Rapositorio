@@ -36,10 +36,11 @@
       <p>O que eu poderia colocar aqui?<br>
          Bem não importa, vou colocar links
          de <abbr title="video cagado por edição">poops:</abbr><br><br>
-
-         1) <a href="https://www.youtube.com/watch?v=hBj01lGCp8Q&t=0s">Poopshop</a><br>
-         2) <a href="https://www.youtube.com/watch?v=THIjfHuYBDw"> Banheira desarranjada</a><br>
-         3) <a href="https://www.youtube.com/watch?v=TZwy4Z1LRy4">Mus<i><b>tang</b></i> preto</a>
+        <ol>
+        <li> 1) <a href="https://www.youtube.com/watch?v=hBj01lGCp8Q&t=0s">Poopshop</a><br></li>
+        <li> 2) <a href="https://www.youtube.com/watch?v=THIjfHuYBDw"> Banheira desarranjada</a><br></li>
+        <li> 3) <a href="https://www.youtube.com/watch?v=TZwy4Z1LRy4">Mus<i><b>tang</b></i> preto</a></li>
+        </ol>
       </p>
       <button style="background-color:aqua; margin-bottom: 4px; color: #520808;" onclick="abrilink()">RandomPoop</button>
       <input type="text" style="background-color:brown; width:50px; color:white" id="input1"><br>
@@ -53,29 +54,45 @@
       <button onclick="submit()" style="background-image: linear-gradient(to right, silver, gold);">Submit</button>
 
       <script>
+        var input1 = document.getElementById("input1");
+        var input2 = document.getElementById("input2");
+        var inp2val = input2.value;
+        var score = [];
+  
+
         function abrilink(){
+          var inp1Atual = document.getElementById("input1").value;
+
           var links = ['https://www.youtube.com/watch?v=hBj01lGCp8Q&t=0s', 
                        'https://www.youtube.com/watch?v=THIjfHuYBDw', 
                        'https://www.youtube.com/watch?v=TZwy4Z1LRy4'];   
           var escolha = Math.floor(Math.random() * 3);
           window.open(links[escolha], '_blank');
-          document.getElementById("input1").value = document.getElementById("input1").value + (escolha + 1);
+          input1.value = input1.value + (escolha + 1);
+
+          score.push(inp1Atual);
+          localStorage.setItem("score", inp1Atual + (escolha + 1));
         }
         function reset(){
-          document.getElementById("input1").value = "";
+          input1.value = "";
         }
  
         function submit(){
-          var input2 = document.getElementById("input2").value;
-          if(input2 == 1){ 
-            document.getElementById("input2").value = "Poopshop is the best!";
-          } else {if (input2 == 2){
-              document.getElementById("input2").value = "Banheira desarranjada is the best!";
-            } else {if (input2 == 3){
-                document.getElementById("input2").value = "Mustang preto is the best!";
-              } else { if (input2 !== ""){
-                  document.getElementById("input2").value = "stop it, get some help..";
-               }}}}}
+         
+
+          if(inp2val == 1){ 
+            input2.value = "Poopshop is the best!";
+          } else {if (inp2val == 2){
+              input2.value = "Banheira desarranjada is the best!";
+            } else {if (inp2val == 3){
+                input2.value = "Mustang preto is the best!";
+              } else { if (inp2val !== ""){
+                  input2.value = "stop it, get some help..";
+              } else{
+                window.alert("Eu vou te deitar na porrada sieu voltaí!");
+              }
+            }
+            }}}
    
         function wipe(){
           document.getElementById("input2").value = "";

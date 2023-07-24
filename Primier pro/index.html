@@ -37,8 +37,8 @@
          Bem não importa, vou colocar links
          de <abbr title="video cagado por edição">poops:</abbr><br><br>
         <ol>
-        <li> 1) <a href="https://www.youtube.com/watch?v=hBj01lGCp8Q&t=0s">Poopshop</a><br></li>
-        <li> 2) <a href="https://www.youtube.com/watch?v=THIjfHuYBDw"> Banheira desarranjada</a><br></li>
+        <li> 1) <a href="https://www.youtube.com/watch?v=hBj01lGCp8Q&t=0s">Poopshop</a></li>
+        <li> 2) <a href="https://www.youtube.com/watch?v=THIjfHuYBDw"> Banheira desarranjada</a></li>
         <li> 3) <a href="https://www.youtube.com/watch?v=TZwy4Z1LRy4">Mus<i><b>tang</b></i> preto</a></li>
         </ol>
       </p>
@@ -54,27 +54,30 @@
       <button onclick="submit()" style="background-image: linear-gradient(to right, silver, gold);">Submit</button>
 
       <script>
+      
         var input1 = document.getElementById("input1");
         var input2 = document.getElementById("input2");
         var inp2val = input2.value;
-        var score = [];
-  
+        var lembrancas = localStorage.getItem("score");
+          //colocar lembranças em ordem
+        input1.value = lembrancas;
 
         function abrilink(){
-          var inp1Atual = document.getElementById("input1").value;
+          var lembrancas = localStorage.getItem("score");
+          var input1 = document.getElementById("input1");
 
           var links = ['https://www.youtube.com/watch?v=hBj01lGCp8Q&t=0s', 
                        'https://www.youtube.com/watch?v=THIjfHuYBDw', 
                        'https://www.youtube.com/watch?v=TZwy4Z1LRy4'];   
           var escolha = Math.floor(Math.random() * 3);
           window.open(links[escolha], '_blank');
-          input1.value = input1.value + (escolha + 1);
+          input1.value = lembrancas + (escolha + 1);
 
-          score.push(inp1Atual);
-          localStorage.setItem("score", inp1Atual + (escolha + 1));
+          localStorage.setItem("score", input1.value);
         }
         function reset(){
           input1.value = "";
+          localStorage.clear();
         }
  
         function submit(){
